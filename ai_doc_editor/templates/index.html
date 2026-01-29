@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Document Reader & Editor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>AI Document Reader & Editor</h2>
+
+<input type="file" id="docFile">
+<button onclick="uploadFile()">Upload</button>
+
+<hr>
+
+<div id="status"></div>
+
+<div id="chatBox" style="display:none;">
+    <div id="chat"></div>
+    <input type="text" id="userInput" placeholder="Enter your instruction...">
+    <button onclick="sendQuery()">Send</button>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
