@@ -1,0 +1,50 @@
+DAARANESWARAN S$
+
+PROFILE
+
+Highly motivated and detail-oriented M.Tech Computer Science graduate with a strong foundation in Python programming and extensive experience in building full-stack and AI-powered applications. Proficient in developing projects that incorporate NLP-based PDF intelligence, real-time computer vision, and database-driven web platforms. A quick learner with hands-on experience in Flask, MySQL, and API-driven systems, seeking a software development role that leverages my skills and expertise.
+
+PROFESSIONAL EXPERIENCE CONTACT
+ +916369965934
+
+Full Stack Developer Intern
+Duo Dev Technologies
+March 2025 - Present
+Tirupur, Tamil Nadu, India
+
+- Completed comprehensive training in Full Stack Development, working with HTML, CSS, JavaScript, and PHP for backend development with database connectivity.
+- Utilized Bootstrap for responsive and modern UI design.
+- Actively contributed to projects and consistently delivered high-quality work, earning recognition as one of the top performers during the internship.
+
+CERTIFICATIONS
+
+- Introduction to Python from Infosys SpringBoard (24H)
+- SQL Certification from LinkedIn Learning
+- Python for Data Science from Infosys SpringBoard (16H)
+- Model Context Protocol Certification from Engineering Anthropic
+- Python and Flask Framework for Complete Beginners (Udemy, Horizon Tech)
+- Software Project Management from NPTEL
+
+EDUCATION
+
+- Master of Technology in Computer Science and Engineering, Erode Sengunthar Engineering College (2022-2027)
+- CGPA of 8.80 (upto 6th Semester)
+- Higher Secondary Certificate (HSC) from AVP Trust Public School (CBSE), 2022 - Scored: 75%
+- Secondary School Certificate (SSLC) from AVP Trust Public School (CBSE), 2020 - Scored: 82.6%
+
+SKILLS AREA OF INTEREST
+
+Primary Language: Python
+
+- Backend Development
+- Python Development
+- Full Stack Development
+- AI/ML
+- Cloud Computing
+- Devops
+
+Libraries/Framework : Flask, Django
+Web Development: HTML, CSS, And JavaScript
+Databases: MySQL, PostgreSQL
+
+Collaborative Tools: Git and GitHub

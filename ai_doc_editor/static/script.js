@@ -32,3 +32,7 @@ function sendQuery() {
         document.getElementById("userInput").value = "";
     });
 }
+function downloadPDF() {
+    window.location.href = "/download";
+}
+

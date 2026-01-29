@@ -1,4 +1,8 @@
 from flask import Flask, render_template, request, jsonify, session
+from utils.versioning import get_latest_edited_text
+from utils.pdf_generator import generate_pdf_from_text
+from flask import send_file
+
 import os, uuid
 
 from ocr.preprocess import preprocess_image
@@ -53,6 +57,16 @@ def chat():
 
     response = chat_with_llm(session_id, user_query)
     return jsonify({"response": response})
+@app.route("/download")
+def download_pdf():
+    text = get_latest_edited_text()
+    if not text:
+        return "No edited document available", 400
+
+    pdf_path = "outputs/final.pdf"
+    generate_pdf_from_text(text, pdf_path)
+
+    return send_file(pdf_path, as_attachment=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
