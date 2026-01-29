@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Document Editor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <button class="nav-btn" onclick="goToPassport()">
+                🛂 Passport Verification
+            </button>
+        </div>
+
+        <div class="header-center">
+            <h3>AI Document Editor</h3>
+        </div>
+
+        <div class="header-right">
+            <button
+                id="downloadBtn"
+                class="download-btn"
+                onclick="downloadPDF()"
+                style="display:none;">
+                ⬇ Download
+            </button>
+        </div>
+    </header>
+
+    <!-- UPLOAD -->
+    <section class="upload-box">
+        <input type="file" id="docFile">
+        <button onclick="uploadFile()">Upload</button>
+        <span id="status"></span>
+    </section>
+
+    <!-- CHAT -->
+    <main class="chat-container" id="chat"></main>
+
+    <!-- INPUT -->
+    <footer class="input-bar">
+        <input type="text" id="userInput" placeholder="Type your message..." disabled>
+        <button id="sendBtn" onclick="sendQuery()" disabled>Send</button>
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
