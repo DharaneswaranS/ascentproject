@@ -7,6 +7,7 @@ def extract_passport_data(image_path):
         return None
 
     data = mrz.to_dict()
+    
     return {
         "passport_number": data.get("number"),
         "surname": data.get("surname"),
