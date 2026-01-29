@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Document Reader & Editor</title>
+    <title>AI Document Editor</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<h2>AI Document Reader & Editor</h2>
+<div class="app">
 
-<input type="file" id="docFile">
-<button onclick="uploadFile()">Upload</button>
+    <!-- HEADER -->
+    <div class="header">
+        <h3>AI Document Editor</h3>
+        <button id="downloadBtn" onclick="downloadPDF()" hidden>⬇ Download</button>
+    </div>
 
-<hr>
+    <!-- UPLOAD -->
+    <div class="upload-box">
+        <input type="file" id="docFile">
+        <button onclick="uploadFile()">Upload</button>
+        <span id="status"></span>
+    </div>
 
-<div id="status"></div>
+    <!-- CHAT -->
+    <div class="chat-container" id="chat"></div>
 
-<div id="chatBox" style="display:none;">
-    <div id="chat"></div>
-    <input type="text" id="userInput" placeholder="Enter your instruction...">
-    <button onclick="sendQuery()">Send</button>
+    <!-- INPUT -->
+    <div class="input-bar">
+        <input type="text" id="userInput" placeholder="Type your message..." disabled>
+        <button onclick="sendQuery()" disabled id="sendBtn">Send</button>
+    </div>
+    <button id="downloadBtn" onclick="downloadPDF()" style="display:none;">
+    ⬇ Download
+    </button>
+
 </div>
-<br>
-<button onclick="downloadPDF()">Download Edited PDF</button>
 
 <script src="/static/script.js"></script>
 </body>
