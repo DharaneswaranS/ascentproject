@@ -1,24 +1,24 @@
 let firstQuerySent = false;
 
+function goToPassport() {
+    window.location.href = "/passport-ui";
+}
+
 function uploadFile() {
     const file = document.getElementById("docFile").files[0];
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("/upload", {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById("status").innerText = data.message;
-
-        if (data.status === "accepted") {
-            document.getElementById("userInput").disabled = false;
-            document.getElementById("sendBtn").disabled = false;
-            addMessage("AI", "Document accepted. You can start chatting.", "ai");
-        }
-    });
+    fetch("/upload", { method: "POST", body: formData })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("status").innerText = data.message;
+            if (data.status === "accepted") {
+                document.getElementById("userInput").disabled = false;
+                document.getElementById("sendBtn").disabled = false;
+                addMessage("AI", "Document accepted. Start chatting.", "ai");
+            }
+        });
 }
 
 function sendQuery() {
@@ -38,10 +38,8 @@ function sendQuery() {
     .then(data => {
         addMessage("AI", data.response, "ai");
 
-        // ✅ SHOW DOWNLOAD BUTTON AFTER FIRST QUERY
         if (!firstQuerySent) {
-            const btn = document.getElementById("downloadBtn");
-            btn.style.display = "inline-block";   // safer than hidden
+            document.getElementById("downloadBtn").style.display = "inline-block";
             firstQuerySent = true;
         }
     });

@@ -10,6 +10,11 @@ from ocr.validate import validate_document
 from ocr.extract import extract_text
 from llm.chat import chat_with_llm
 
+from passport.extractor import extract_passport_data
+from passport.face_detector import detect_face
+from passport.signature_detector import detect_signature
+from passport.utils import pdf_to_image
+
 app = Flask(__name__)
 app.secret_key = "doc-secret"
 
@@ -67,6 +72,40 @@ def download_pdf():
     generate_pdf_from_text(text, pdf_path)
 
     return send_file(pdf_path, as_attachment=True)
+@app.route("/passport", methods=["POST"])
+def passport_handler():
+    file = request.files["file"]
+    path = os.path.join("uploads", file.filename)
+    file.save(path)
+
+    # Convert PDF to image if needed
+    if path.lower().endswith(".pdf"):
+        image_path = pdf_to_image(path)
+    else:
+        image_path = path
+
+    passport_data = extract_passport_data(image_path)
+    if not passport_data:
+        return {
+            "status": "FAILED",
+            "reason": "MRZ not detected"
+        }
+
+    face_present = detect_face(image_path)
+    signature_present = detect_signature(image_path)
+
+    return {
+        "status": "SUCCESS",
+        "document_type": "PASSPORT",
+        "passport_data": passport_data,
+        "photo_present": face_present,
+        "signature_present": signature_present,
+        "valid": face_present and signature_present
+    }
+@app.route("/passport-ui")
+def passport_ui():
+    return render_template("passport.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

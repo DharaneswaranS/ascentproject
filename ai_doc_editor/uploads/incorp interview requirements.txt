@@ -1,0 +1,10 @@
+git-commit,branch via cmd
+frontend-promises
+zoho oops application-items-materials,customer-data,accounting-invoice header-customer details,send notifications for specific user
+n8n
+notification system
+ocr 
+pdf maker
+orm
+jwt
+rbac,authentiication,authorization
