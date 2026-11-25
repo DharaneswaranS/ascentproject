@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passport Verification</title>
+    <link rel="stylesheet" href="/static/passport.css">
+</head>
+<body>
+
+<div class="page">
+    <div class="card">
+
+        <h2>🛂 Passport Verification</h2>
+        <p class="subtitle">
+            Upload a passport PDF or image to extract data and validate authenticity.
+        </p>
+
+        <input type="file" id="passportFile" class="file-input"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        <button class="primary-btn" onclick="verifyPassport()">
+            Verify Passport
+        </button>
+
+        <div id="result" class="result hidden"></div>
+
+    </div>
+</div>
+
+<script src="/static/passport.js"></script>
+</body>
+</html>
